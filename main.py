@@ -10,7 +10,6 @@ def on_key_event(e):
         print("Speech recognition deactivated.")
         recognition_active = False
         
-
 def talk(text):
     engine = pyttsx3.init('sapi5')
     engine.say(text)
@@ -26,7 +25,7 @@ def mic_to_text():
             if recognition_active:
                 try:
                     print("Listening")
-                    audio = recognizer.listen(source, timeout=0.2, phrase_time_limit=5) #
+                    audio = recognizer.listen(source, timeout=0.2, phrase_time_limit=3) #
                     print("Transcribing")
                     text = recognizer.recognize_google(audio)
                     ftext = format(text)
@@ -44,9 +43,9 @@ def if_else(ftext):
         from pywhatkit import playonyt
         song = ftext.replace("play","")
         try:
+            playonyt(song)
             talk("Playing")
             talk(song)
-            playonyt(song)
         except ValueError:
             talk("Sorry but an error occured while trying to play "+ song + ". If possible can you be specific?")
     
@@ -62,11 +61,43 @@ def if_else(ftext):
         press("printscreen")
         talk("Done sir")
     
-    elif "whether" or "weather" in ftext:
+    elif "whether" in ftext or "weather" in ftext:
         from weather import weather_report as wtr
         sent = wtr()
         talk(sent)            
 
+    elif "open" in ftext:
+        from application import open_app
+        app = open_app(ftext)
+        talk(app)
+        
+    elif "close" in ftext:
+        from application import close_app
+        app = close_app(ftext)
+        talk(app)        
+    
+    elif "who is" in ftext:
+        from wikipedia import summary
+        person = ftext.replace("who is","")
+        info = summary(person,1)
+        talk(info)
+        
+    elif "add" in ftext:
+        from whatsapp import add_number,save_data
+        talk("please enter the number in the below popup with the name.")
+        add_number()
+    
+    elif "send" in ftext:
+        import whatsapp2
+        try:
+            contacts = whatsapp2.load_contacts("data.json")
+            whatsapp2.create_contact_list_gui(contacts)
+        except FileNotFoundError:
+            talk("Sorry! No number found in the contact list.")
+    else:
+        print("I dont get you sir!")
+        talk("I dont get you sir!")
+        
 if __name__ == "__main__":
     recognition_active = False
     keyboard.hook(on_key_event) 
