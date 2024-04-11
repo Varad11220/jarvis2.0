@@ -81,6 +81,14 @@ def if_else(ftext):
         person = ftext.replace("who is","")
         info = summary(person,1)
         talk(info)
+
+    elif "game" in ftext:
+        from game import find_game_link
+        sent = find_game_link(ftext)
+        talk(sent)
+
+
+
         
     elif "add" in ftext:
         from whatsapp import add_number,save_data
