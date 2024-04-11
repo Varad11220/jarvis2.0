@@ -2,6 +2,7 @@ import speech_recognition as sr
 import keyboard
 import threading
 import pyttsx3
+import subprocess
 def on_key_event(e):
     global recognition_active
     if e.event_type == keyboard.KEY_DOWN and e.name == 'h':
@@ -86,9 +87,6 @@ def if_else(ftext):
         from game import find_game_link
         sent = find_game_link(ftext)
         talk(sent)
-
-
-
         
     elif "add" in ftext:
         from whatsapp import add_number,save_data
@@ -111,6 +109,8 @@ if __name__ == "__main__":
     keyboard.hook(on_key_event) 
     thread = threading.Thread(target=mic_to_text)
     thread.start()
+    subprocess.Popen(["python", "p.py"])
+
     keyboard.wait('esc')
     recognition_active = False
     thread.join()
