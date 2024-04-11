@@ -39,7 +39,7 @@ def mic_to_text():
                 
 
 def if_else(ftext):
-    if "play" in ftext:
+    if "play" in ftext and "game" not in ftext:
         from pywhatkit import playonyt
         song = ftext.replace("play","")
         try:
