@@ -51,11 +51,11 @@ def if_else(ftext):
             talk("Sorry but an error occured while trying to play "+ song + ". If possible can you be specific?")
     
     elif "search" in ftext:
-        from pywhatkit import search
+        import pywhatkit
         search = ftext.replace("search","")
+        pywhatkit.search(search)
         talk("Searching")
         talk(search)
-        search(search)
     
     elif "screenshot" in ftext:
         from pyautogui import press
@@ -84,7 +84,7 @@ def if_else(ftext):
         talk(info)
 
     elif "game" in ftext:
-        from game import find_game_link
+        from game import find_game_link 
         sent = find_game_link(ftext)
         talk(sent)
         
@@ -100,6 +100,7 @@ def if_else(ftext):
             whatsapp2.create_contact_list_gui(contacts)
         except FileNotFoundError:
             talk("Sorry! No number found in the contact list.")
+            
     else:
         print("I dont get you sir!")
         talk("I dont get you sir!")
