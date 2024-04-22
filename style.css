@@ -438,7 +438,7 @@ html, body {
 #rightmenu {
   float: right;
   margin-right: 20px;
-  width: 300px;
+  width: 350px;
 }
 
 #note_input {
@@ -448,7 +448,8 @@ html, body {
   background: transparent;
   resize: none;
   transition: 0.3s;
-  width: calc(100% - 15px);
+  width: calc(100% - 10px);
+  font-size: 27px;
 }
 
 #note_input:hover {
@@ -896,7 +897,7 @@ ul {
 
 /* Right Menu Particles */
 #particle10 {
-  width: 330px;
+  width: 370px;
   float: right;
   border-color: rgba(2, 255, 255, 0.5);
 }
@@ -911,7 +912,7 @@ ul {
 
 #particle12 {
   float: left;
-  height: 352px;
+  height: 470px;
   margin-top: -40px;
   border-color: rgba(2, 255, 255, 0.5);
 }

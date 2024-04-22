@@ -87,6 +87,11 @@ def if_else(ftext):
         from game import find_game_link 
         sent = find_game_link(ftext)
         talk(sent)
+
+    elif "download" in ftext:
+        from yt import yt_download
+        sent = yt_download()
+        talk(sent)
         
     elif "add" in ftext:
         from whatsapp import add_number,save_data
