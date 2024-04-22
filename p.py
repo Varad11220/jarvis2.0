@@ -75,7 +75,7 @@ class HTMLViewerApp(QMainWindow):
 if __name__ == '__main__':
     # Specify the new path to the HTML file
     # YASH
-    html_file_path = 'D:\\Quarantine\\Projects\\Miniporject-Personal-Assistant\\jarvis.html'
+    html_file_path = 'D:\\Quarantine\\Projects\\jarvis2.0\\jarvis.html'
     # VARAD
     # html_file_path = 'C:\\Users\\varad\\OneDrive\\Desktop\\personal\\project\\jarvis2.0\\jarvis.html'
 

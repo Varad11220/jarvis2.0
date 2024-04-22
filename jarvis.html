@@ -66,6 +66,23 @@
       document.querySelector(".e5_4").style.animation="none";
     }
     });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("gpt").addEventListener("click", function(event) {
+        window.open("https://chat.openai.com/", "_blank");
+      });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("gem").addEventListener("click", function(event) {
+        window.open("https://gemini.google.com/app", "_blank");
+      });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("exc").addEventListener("click", function(event) {
+        window.open("https://excalidraw.com/", "_blank");
+      });
+    });
+
     </script>
   <p class="title">Performance</p>
   <div class="hline title_underline"></div>
@@ -94,9 +111,9 @@
     <hr style="border-color: transparent; margin: 0;"/>
     <div class="hline" style="margin-top: 5px; margin-bottom: 5px;"></div>
     
-    <button class="menuitem"> <span class="entypo-right-open"> <p class="caption">Custom Path 1</p> </button>
-    <button class="menuitem"> <span class="entypo-right-open"> <p class="caption">Custom Path 2</p> </button>
-    <button class="menuitem"> <span class="entypo-right-open"> <p class="caption">Custom Path 3</p> </button>
+    <button id="gpt" class="menuitem"> <span class="entypo-right-open"> <p class="caption">Chat GPT</p> </button>
+    <button id="gem" class="menuitem"> <span class="entypo-right-open"> <p class="caption">Gemini</p> </button>
+    <button id="exc" class="menuitem"> <span class="entypo-right-open"> <p class="caption">Excalidraw</p> </button>
   </div>
   
   <p class="title">Social</p>
@@ -121,7 +138,7 @@
   <div id="particle10" class="hline"></div>
   <div id="particle11" class="hline"></div>
   <div id="particle12" class="vline"></div>
-  <textarea id="note_input" rows="16" cols="50">Tasks that JARVIS can perform:
+  <textarea id="note_input" rows="16" cols="50" readonly>Tasks that JARVIS can perform:
     - Open and Close Applications
     - Play something on Youtube
     - Download Youtube video by link
