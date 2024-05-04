@@ -97,7 +97,23 @@ def if_else(ftext):
         from whatsapp import add_number,save_data
         talk("please enter the number in the below popup with the name.")
         add_number()
-    
+    elif "pause" in ftext:
+        from pyautogui import press
+        press("k")
+        
+    elif "continue" in ftext:
+        from pyautogui import press
+        press("k")
+        
+    elif "forward" in ftext:
+        from pyautogui import press
+        press("l")
+
+    elif "backward" in ftext:
+        from pyautogui import press
+        press("j")
+
+
     elif "send" in ftext:
         import whatsapp2
         try:
