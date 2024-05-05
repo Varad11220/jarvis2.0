@@ -21,12 +21,12 @@ def weather_report():
     wind = components[6]
 
     # JUST FOR DEBUGGING
-    print("\nLocation:", location)
-    print("Condition:", condition)
-    print("Humidity:", humidity)
-    print("Temperature:", temperature)
-    print("Feels Like:", feels_like)
-    print("Wind:", wind)
+    # print("\nLocation:", location)
+    # print("Condition:", condition)
+    # print("Humidity:", humidity)
+    # print("Temperature:", temperature)
+    # print("Feels Like:", feels_like)
+    # print("Wind:", wind)
 
     # TUZHYA VOICE COMMAND SATHI
     # AJUN KAHI ASTIL TAR ADD KARU

@@ -77,12 +77,6 @@ def if_else(ftext):
         app = close_app(ftext)
         talk(app)        
     
-    elif "who is" in ftext:
-        from wikipedia import summary
-        person = ftext.replace("who is","")
-        info = summary(person,1)
-        talk(info)
-
     elif "game" in ftext:
         from game import find_game_link 
         sent = find_game_link(ftext)
@@ -92,11 +86,7 @@ def if_else(ftext):
         from yt import yt_download
         sent = yt_download()
         talk(sent)
-        
-    elif "add" in ftext:
-        from whatsapp import add_number,save_data
-        talk("please enter the number in the below popup with the name.")
-        add_number()
+         
     elif "pause" in ftext:
         from pyautogui import press
         press("k")
@@ -109,10 +99,24 @@ def if_else(ftext):
         from pyautogui import press
         press("l")
 
-    elif "backward" in ftext:
+    elif "backward" in ftext or "back" in ftext:
         from pyautogui import press
         press("j")
 
+    elif "who is" in ftext:
+        import wikipedia
+        try:
+            person = ftext.replace("who is","")
+            info = wikipedia.summary(person,1)
+            talk(info)
+        except wikipedia.exceptions.PageError:
+            talk("no person found")
+
+
+    elif "add" in ftext:
+        from whatsapp import add_number,save_data
+        talk("please enter the number in the below popup with the name.")
+        add_number()
 
     elif "send" in ftext:
         import whatsapp2
