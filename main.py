@@ -136,5 +136,3 @@ if __name__ == "__main__":
     keyboard.wait('esc')
     recognition_active = False
     thread.join()
-   
-    
