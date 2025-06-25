@@ -41,7 +41,7 @@ This **Python-based desktop automation project** acts like a mini **Jarvis** fro
 
 ## 📦 Installation
 ```bash
-git clone https://github.com/your-username/voice-controlled-desktop-assistant.git
+git clone https://github.com/Varad11220/jarvis2.0.git
 cd jarvis2.0
 pip install -r requirements.txt
 python main.py
